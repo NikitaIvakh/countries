@@ -1,7 +1,12 @@
+import Header from './components/Header/Header'
 import './styles/app.scss'
 
 function App() {
-	return <></>
+	return (
+		<>
+			<Header />
+		</>
+	)
 }
 
 export default App
