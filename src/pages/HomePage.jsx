@@ -10,13 +10,6 @@ const HomePage = ({ countries, setCountries }) => {
 	const [filteredCountries, setFilteredCountries] = useState(countries)
 	const navigate = useNavigate()
 
-	useEffect(() => {
-		if (!countries.length)
-			axios.get(ALL_COUNTRIES).then(({ data }) => {
-				setCountries(data)
-			})
-	})
-
 	const handleSearch = (search, region) => {
 		let data = [...countries]
 
@@ -37,41 +30,52 @@ const HomePage = ({ countries, setCountries }) => {
 		setFilteredCountries(data)
 	}
 
+	useEffect(() => {
+		if (!countries.length)
+			axios.get(ALL_COUNTRIES).then(({ data }) => {
+				setCountries(data)
+			})
+	}, [])
+
+	useEffect(() => {
+		handleSearch()
+	}, [countries])
+
 	return (
 		<>
 			<Controls handleSearch={handleSearch} />
 			{countries.length > 0 ? (
 				<List>
-					{filteredCountries.map((item, i) => {
-						const countryInfo = {
-							img: item.flags.png,
-							name: item.name.common || item.name.official,
-							info: [
-								{
-									title: 'Population',
-									description: item.population.toLocaleString(),
-								},
-								{
-									title: 'Region',
-									description: item.region,
-								},
-								{
-									title: 'Capital',
-									description: item.capital,
-								},
-							],
-						}
+					{filteredCountries
+						.sort((a, b) => a.name.common.localeCompare(b.name.common))
+						.map((item, i) => {
+							const countryInfo = {
+								img: item.flags.svg,
+								name: item.name.common,
+								info: [
+									{
+										title: 'Population',
+										description: item.population.toLocaleString(),
+									},
+									{
+										title: 'Region',
+										description: item.region,
+									},
+									{
+										title: 'Capital',
+										description: item.capital,
+									},
+								],
+							}
 
-						return (
-							<Card
-								key={i}
-								{...countryInfo}
-								onClick={() =>
-									navigate(`/country/${item.name.common || item.name.official}`)
-								}
-							/>
-						)
-					})}
+							return (
+								<Card
+									key={i}
+									{...countryInfo}
+									onClick={() => navigate(`/country/${item.name.common}`)}
+								/>
+							)
+						})}
 				</List>
 			) : (
 				<p>Loading...</p>
