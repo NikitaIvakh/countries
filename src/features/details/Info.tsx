@@ -1,8 +1,13 @@
-import React from 'react'
+import { NavigateFunction } from 'react-router-dom'
+import { Country } from 'types'
 import './info.scss'
 import { useNeighbors } from './use-neighbors'
 
-export const Info = props => {
+interface InfoProps extends Country {
+	navigate: NavigateFunction
+}
+
+export const Info = (props: InfoProps) => {
 	const {
 		name,
 		nativeName,
