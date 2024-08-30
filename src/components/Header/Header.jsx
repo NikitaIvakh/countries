@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { IoMoon, IoMoonOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 import './header.scss'
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
 			<div className='container'>
 				<div className='header__wrapper'>
 					<h2 className='header__title'>
-						<a href='##'>Where is the world?</a>
+						<Link to='/'>Where is the world?</Link>
 					</h2>
 					<div className='header__switcher' onClick={toggleTheme}>
 						<ThemeIcon />
