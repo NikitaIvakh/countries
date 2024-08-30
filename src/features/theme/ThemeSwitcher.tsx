@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoMoon, IoMoonOutline } from 'react-icons/io5'
 import './themeSwitcher.scss'
 import { useTheme } from './use-theme'

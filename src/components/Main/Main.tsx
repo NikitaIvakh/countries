@@ -1,7 +1,11 @@
-import React from 'react'
+import { ReactNode } from 'react'
 import './main.scss'
 
-const Main = ({ children }) => {
+interface MainProps {
+	children: ReactNode
+}
+
+const Main = ({ children }: MainProps) => {
 	return (
 		<main className='main'>
 			<div className='container'>{children}</div>

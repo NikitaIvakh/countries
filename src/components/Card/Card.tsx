@@ -1,6 +1,11 @@
+import { CountryInfo } from 'types'
 import './card.scss'
 
-const Card = ({ img, name, info = [], onClick }) => {
+interface CardProps extends CountryInfo {
+	onClick: () => void
+}
+
+const Card = ({ img, name, info = [], onClick }: CardProps) => {
 	return (
 		<article className='card' onClick={onClick}>
 			<img className='card__image' src={img} alt={name} />
