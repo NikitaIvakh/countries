@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './styles/index.scss'
 
-import { store } from './store'
+import { store } from './store/store'
 
 const rootElement = document.getElementById('root')
 const root = ReactDOMClient.createRoot(rootElement)
