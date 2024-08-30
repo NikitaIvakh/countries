@@ -1,5 +1,6 @@
-import Select from 'react-select'
 import styled from 'styled-components'
+
+import Select from 'react-select'
 
 export const CustomSelect = styled(Select).attrs({
 	styles: {
@@ -27,6 +28,7 @@ export const CustomSelect = styled(Select).attrs({
 	border-radius: var(--radii);
 	font-family: var(--family);
 	border: none;
+
 	& > * {
 		box-shadow: var(--shadow);
 	}

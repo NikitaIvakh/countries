@@ -1,12 +1,12 @@
 .header {
-	.container {
-		width: 100%;
-		max-width: 1240px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
 	box-shadow: var(--shadow);
-	background-color: (--colors-ui-base);
+	background-color: var(--colors-ui-base);
+	&__container {
+		width: 100%;
+		max-width: var(--container-max-width);
+		margin: 0 auto;
+		padding: var(--container-padding) 0;
+	}
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -14,22 +14,6 @@
 		padding: 2rem 0;
 	}
 	&__title {
-		color: var(--colors-text);
-		font-size: var(--fs-sm);
-		text-decoration: none;
-		font-weight: var(--fw-bold);
-	}
-	&__switcher {
-		color: var(--colors-text);
-		font-size: var(--fs-sm);
-		cursor: pointer;
-		font-weight: var(--fw-bold);
-		text-transform: capitalize;
-		span {
-			margin-left: 0.75rem;
-		}
-	}
-	a {
 		color: var(--colors-text);
 		font-size: var(--fs-sm);
 		text-decoration: none;

@@ -1,0 +1,14 @@
+.main {
+	padding: var(--padding-sm) 0;
+
+	.container {
+		width: 100%;
+		max-width: var(--container-max-width);
+		margin: 0 auto;
+		padding: var(--container-padding) 0;
+	}
+
+	@media (min-width: 767px) {
+		padding: var(--padding-md) 0;
+	}
+}

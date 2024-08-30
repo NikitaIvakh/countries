@@ -4,7 +4,6 @@
 	box-shadow: var(--shadow);
 	cursor: pointer;
 	overflow: hidden;
-
 	&__image {
 		display: block;
 		width: 100%;
@@ -13,30 +12,25 @@
 		object-position: center;
 		box-shadow: var(--shadow);
 	}
-
 	&__body {
 		padding: 1rem 1.5rem 2rem;
 	}
-
 	&__title {
 		margin: 0;
 		font-size: var(--fs-md);
 		font-weight: var(--fw-bold);
 	}
-
 	&__list {
 		list-style: none;
 		margin: 0;
 		padding: 1rem 0 0;
-	}
-
-	&__list-item {
-		font-size: var(--fs-sm);
-		line-height: 1.5;
-		font-weight: var(--fw-light);
-
-		&-title {
-			font-weight: var(--fw-bold);
+		&-item {
+			font-size: var(--fs-sm);
+			line-height: 1.5;
+			font-weight: var(--fw-light);
+			& > b {
+				font-weight: var(--fw-bold);
+			}
 		}
 	}
 }

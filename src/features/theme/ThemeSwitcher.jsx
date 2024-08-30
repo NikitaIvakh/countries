@@ -1,18 +1,19 @@
+import React from 'react'
 import { IoMoon, IoMoonOutline } from 'react-icons/io5'
 import './themeSwitcher.scss'
-import useTheme from './useTheme'
+import { useTheme } from './use-theme'
 
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
 	const [theme, toggleTheme] = useTheme()
 
 	return (
-		<div className='themeSwitcher' onClick={toggleTheme}>
+		<div className='theme-switcher' onClick={toggleTheme}>
 			{theme === 'light' ? (
-				<IoMoonOutline size='14px' />
+				<IoMoonOutline size='14px' className='theme-switcher__icon' />
 			) : (
-				<IoMoon size='14px' />
-			)}{' '}
-			<span style={{ marginLeft: '0.75rem' }}>{theme} Theme</span>
+				<IoMoon size='14px' className='theme-switcher__icon' />
+			)}
+			<span>{theme} Theme</span>
 		</div>
 	)
 }

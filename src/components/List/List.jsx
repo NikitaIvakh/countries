@@ -1,7 +1,7 @@
 import './list.scss'
 
 const List = ({ children }) => {
-	return <section className='wrapper'>{children}</section>
+	return <section className='list'>{children}</section>
 }
 
 export default List

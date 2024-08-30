@@ -16,6 +16,13 @@
 
 	/* Other */
 	--radii: 0.5rem;
+	--container-max-width: 1240px;
+	--container-padding: 0 2rem;
+	--padding-sm: 2rem;
+	--padding-md: 2.5rem;
+	--gap-sm: 2rem;
+	--gap-md: 3rem;
+	--gap-lg: 4rem;
 }
 
 body[data-theme='dark'] {
