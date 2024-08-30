@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CustomSelect } from '../CustomSelect'
 import Search from '../Search/Search'
 import './controls.scss'
@@ -11,9 +11,14 @@ const options = [
 	{ value: 'Oceania', label: 'Oceania' },
 ]
 
-const Controls = () => {
+const Controls = ({ handleSearch }) => {
 	const [search, setSearch] = useState('')
 	const [region, setRegion] = useState('')
+
+	useEffect(() => {
+		const regionValue = region?.value || ''
+		handleSearch(search, regionValue)
+	}, [search, region])
 
 	return (
 		<div className='controls__wrapper'>
