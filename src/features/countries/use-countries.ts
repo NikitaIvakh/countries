@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { RootState, useAppDispatch } from 'store/store'
 import { Country } from 'types'
-import { selectControls } from '../controls/controls-slice'
+import { selectControls } from '../controls/controls-selectors'
 import { loadCountries } from './countries-actions'
 import {
 	selectCountriesInfo,
